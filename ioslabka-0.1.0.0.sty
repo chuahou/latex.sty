@@ -1,0 +1,13 @@
+% SPDX-License-Identifier: MIT
+% Copyright (c) 2020 Chua Hou
+%
+% Uses Ioslabka as monospace font.
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{ioslabka-0.1.0.0}
+
+\RequirePackage{fontspec}
+\newfontfamily{\ioslabka}[Scale=MatchUppercase]{Ioslabka}
+\renewcommand{\ttfamily}{\ioslabka}
+
+\@ifpackageloaded{listings}{\lstset{basicstyle=\ttfamily}}{}
