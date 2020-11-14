@@ -8,14 +8,14 @@
 
 % tutorial title
 \let\oldtitle\title
-\renewcommand{\title}[2]{%
+\renewcommand{\title}[2]{\oldtitle{
 	{\large\sc #1} \\ \vspace{0.3em} % course (e.g. Compilers)
-	{\Large\bf #2}                   % sheet title (e.g. Problem Sheet 2)
-}
+	{\Large\bf #2}%                  % sheet title (e.g. Problem Sheet 2)
+}}
 \renewcommand{\maketitle}{%
 	\begin{center}
-		\@title \\ \vspace{0.3em}
-		\@author \vspace{1em}
+		\@title \\ \vspace{0.25em}
+		\@author \vspace{1.5em}
 	\end{center}%
 }
 
