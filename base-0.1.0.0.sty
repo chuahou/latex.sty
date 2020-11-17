@@ -22,3 +22,11 @@
 
 % URLs that break over hyphens
 \PassOptionsToPackage{hyphens}{url}\RequirePackage{hyperref}
+
+% number a single equation manually
+\newcommand{\numberthis}[1]{%
+	\addtocounter{equation}{1}\tag{\theequation}\label{#1}}
+
+% stack text above an operator
+\newcommand{\aboveop}[2]{%
+	\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny #1}}}{#2}}}
