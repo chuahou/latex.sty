@@ -1,0 +1,44 @@
+% SPDX-License-Identifier: MIT
+% Copyright (c) 2020 Chua Hou
+%
+% Base prelude package for common use.
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{base-0.1.2.0}
+
+% basic packages
+\RequirePackage{fullpage}
+\RequirePackage{parskip}
+
+% maths essentials
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage{bm}
+\allowdisplaybreaks
+
+% code listings
+\RequirePackage{listings}
+\lstset
+	{ basicstyle=\ttfamily
+	, columns=fullflexible
+	, keepspaces=true
+	, belowskip=0\baselineskip
+	}
+
+% URLs that break over hyphens
+\PassOptionsToPackage{hyphens}{url}\RequirePackage{hyperref}
+
+% flushed footnotes below floating objects
+\RequirePackage[hang,flushmargin,bottom]{footmisc}
+
+% number a single equation manually
+\newcommand{\numberthis}[1]{%
+	\addtocounter{equation}{1}\tag{\theequation}\label{#1}}
+
+% stack text above an operator
+\newcommand{\aboveop}[2]{%
+	\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny #1}}}{#2}}}
+
+% semantic macros
+\newcommand{\name}[1]{\textsc{#1}}
+\newcommand{\code}[1]{\texttt{#1}}
