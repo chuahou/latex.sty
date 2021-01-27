@@ -1,0 +1,19 @@
+% SPDX-License-Identifier: MIT
+% Copyright (c) 2021 Chua Hou
+%
+% Pseudocode using the algorithm and algpseudocode packages.
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{pseudocode-0.1.0.0}
+
+\RequirePackage{algorithm}
+\RequirePackage{algpseudocode}
+
+% Boilerplate macro for an algorithmic within an algorithm environment with
+% caption and label given in arguments
+\newenvironment{pseudocode}[2]
+	{\begin{algorithm}[H]\caption{\hspace{1em}#1}\label{#2}\begin{algorithmic}[1]}
+	{\end{algorithmic}\end{algorithm}}
+
+% Allows nested \Calls
+\MakeRobust\Call
