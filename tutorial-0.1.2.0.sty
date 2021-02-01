@@ -1,0 +1,45 @@
+% SPDX-License-Identifier: MIT
+% Copyright (c) 2020 Chua Hou
+%
+% Tutorial sheet solutions formatting.
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{tutorial-0.1.2.0}
+
+% tutorial title
+\let\oldtitle\title
+\renewcommand{\title}[2]{\oldtitle{
+	{\large\sc #1} \\ \vspace{0.35em} % course (e.g. Compilers)
+	{\Large\bf #2}%                  % sheet title (e.g. Problem Sheet 2)
+}}
+\renewcommand{\maketitle}{%
+	\begin{center}
+		\@title \\ \vspace{0.25em}
+		\@author \vspace{1.5em}
+	\end{center}%
+}
+
+% global itemize environment for question numbering
+\RequirePackage[inline]{enumitem}
+\newenvironment{questionize}
+	{\begin{itemize}[leftmargin=*]\setlength\itemsep{1.5em}}
+	{\end{itemize}}
+
+% custom item shortcuts
+\newcommand{\itemc}[1]{\item[#1]}
+\newcommand{\itemb}[1]{\item[\bf#1]}
+
+% use Linux Libertine
+\RequirePackage[tt=false]{libertine}
+
+% highlight parts in red to ask tutor
+\RequirePackage{xcolor}
+\newcommand{\wtf}[1]{{\color{red} #1}}
+\newcommand{\wtfpreamble}{%
+	\begin{center}
+		\emph{I have coloured some parts of my answers in \wtf{\sc red} where I
+		am particularly unsure if it is correct, so if possible I hope you could
+		take a closer look at those parts. Thank you!}
+	\end{center}
+	\vspace{1em}%
+}
